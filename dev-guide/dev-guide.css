@@ -1,0 +1,69 @@
+:root {
+  color-scheme: light dark;
+  /* Default: Light Mode Colors */
+  --table-bg: #ffffff;
+  --table-text: #333333;
+  --table-header-bg: #f2f2f2;
+  --table-border: #dddddd;
+  --table-row-hover: #f9f9f9;
+  --table-stripe: #fafafa;
+
+  /* Light Mode Link Styles */
+  --link-color: #0066cc;
+  --link-highlight: rgba(0, 102, 204, 0.1); /* Subtle blue highlight */
+  --link-underline: #0066cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode Overrides - Avoid pure black (#000) for better readability */
+    --table-bg: #1e1e1e;
+    --table-text: #e0e0e0;
+    --table-header-bg: #333333;
+    --table-border: #444444;
+    --table-row-hover: #2c2c2c;
+    --table-stripe: #252525;
+  
+    /* Dark Mode Link Styles */
+    --link-color: #66b2ff; /* Lighter blue for readability */
+    --link-highlight: rgba(102, 178, 255, 0.2); /* Muted highlight */
+    --link-underline: #66b2ff;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--table-bg);
+  color: var(--table-text);
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border);
+}
+
+th {
+  background-color: var(--table-header-bg);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Specific styling for your deprecated class */
+.deprecated {
+  color: var(--deprecated-text);
+  background-color: var(--deprecated-bg);
+}
+
+.deprecated a {
+  opacity: 0.8; /* Dim links in deprecated rows */
+}
